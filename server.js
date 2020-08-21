@@ -4,6 +4,9 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 const port = 3000;
 app.use(express.static('public'));
+const dotenv = require('dotenv');
+dotenv.config();
+var HOST = 'https://cryptic-brook-80894.herokuapp.com';
 
 io.on('connection', function (socket) {
     console.log('a user connected');
@@ -45,6 +48,6 @@ io.on('connection', function (socket) {
 
 });
 
-http.listen(3000, function () {
-    console.log('listening on', port);
+http.listen(HOST, function () {
+    console.log('listening on', HOST);
 });

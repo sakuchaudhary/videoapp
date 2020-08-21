@@ -130,6 +130,8 @@ function onIceCandidate(event) {
 
 function onAddStream(event) {
     console.log("remote");
+    localVideo.srcObject = event.streams[0];
     remoteVideo.srcObject = event.streams[0];
+    localStream = event.stream;
     remoteStream = event.stream;
 }
